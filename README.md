@@ -1,7 +1,5 @@
 # device_context_plus
 
-# device_context_plus
-
 [![pub version](https://img.shields.io/pub/v/device_context_plus.svg)](https://pub.dev/packages/device_context_plus)
 [![likes](https://img.shields.io/pub/likes/device_context_plus)](https://pub.dev/packages/device_context_plus/score)
 [![popularity](https://img.shields.io/pub/popularity/device_context_plus)](https://pub.dev/packages/device_context_plus/score)
