@@ -23,8 +23,9 @@ Unlike basic plugins, `device_context_plus` goes beyond simple app info by expos
 
 ## 📱 Example
 
-![Device Context Example - iOS](assets/images/ios_example.png)
-![Device Context Example - Android](assets/images/android_example.png)
+| 🍎 → iOS / Apple                              | 🤖 → Android                                          |
+| --------------------------------------------- | ----------------------------------------------------- |
+| ![Example iOS](assets/images/ios_example.png) | ![Example Android](assets/images/android_example.png) |
 
 > Example app showing device and app context including iOS Team ID.
 
