@@ -1,4 +1,4 @@
-package com.example.device_context_plus
+package br.com.example.device_context_plus
 
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel

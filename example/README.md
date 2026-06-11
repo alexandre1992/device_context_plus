@@ -18,5 +18,4 @@ A Flutter plugin that provides system and runtime context for apps.
 
 ```dart
 final info = await DeviceContext.getAll();
-
 ```

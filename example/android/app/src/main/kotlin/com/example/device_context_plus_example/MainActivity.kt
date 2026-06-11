@@ -1,4 +1,4 @@
-package com.example.device_context_plus_example
+package br.com.example.device_context_plus_example
 
 import io.flutter.embedding.android.FlutterActivity
 

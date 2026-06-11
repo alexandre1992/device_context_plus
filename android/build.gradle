@@ -1,4 +1,4 @@
-group = "com.example.device_context_plus"
+group = "br.com.example.device_context_plus"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -25,7 +25,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.example.device_context_plus"
+    namespace = "br.com.example.device_context_plus"
 
     compileSdk = 36
 

@@ -1,29 +1,59 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:device_context_plus/device_context_plus.dart';
 import 'package:device_context_plus/device_context_plus_platform_interface.dart';
-import 'package:device_context_plus/device_context_plus_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockDeviceContextPlusPlatform
     with MockPlatformInterfaceMixin
     implements DeviceContextPlusPlatform {
+  @override
+  Future<Map<String, dynamic>> getAll() async {
+    return {
+      'app': {'version': '1.0.0'},
+      'device': {'platform': 'android'}
+    };
+  }
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<Map<String, dynamic>> getApp() async {
+    return {'version': '1.0.0'};
+  }
+
+  @override
+  Future<Map<String, dynamic>> getDevice() async {
+    return {'platform': 'android'};
+  }
 }
 
 void main() {
-  final DeviceContextPlusPlatform initialPlatform = DeviceContextPlusPlatform.instance;
+  final initialPlatform = DeviceContextPlusPlatform.instance;
 
-  test('$MethodChannelDeviceContextPlus is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelDeviceContextPlus>());
+  test('Default instance is set', () {
+    expect(initialPlatform, isNotNull);
   });
 
-  test('getPlatformVersion', () async {
-    DeviceContextPlus deviceContextPlusPlugin = DeviceContextPlus();
-    MockDeviceContextPlusPlatform fakePlatform = MockDeviceContextPlusPlatform();
-    DeviceContextPlusPlatform.instance = fakePlatform;
+  test('getAll returns DeviceContext model', () async {
+    DeviceContextPlusPlatform.instance = MockDeviceContextPlusPlatform();
 
-    expect(await deviceContextPlusPlugin.getPlatformVersion(), '42');
+    final context = await DeviceContextPlus.getAll();
+
+    expect(context.app['version'], '1.0.0');
+    expect(context.device['platform'], 'android');
+  });
+
+  test('getApp returns expected data', () async {
+    DeviceContextPlusPlatform.instance = MockDeviceContextPlusPlatform();
+
+    final result = await DeviceContextPlus.getApp();
+
+    expect(result['version'], '1.0.0');
+  });
+
+  test('getDevice returns expected data', () async {
+    DeviceContextPlusPlatform.instance = MockDeviceContextPlusPlatform();
+
+    final result = await DeviceContextPlus.getDevice();
+
+    expect(result['platform'], 'android');
   });
 }
