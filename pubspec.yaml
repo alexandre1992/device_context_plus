@@ -4,7 +4,7 @@ description: >
   including iOS Team ID, Android installer source, locale, timezone,
   and system information.
 
-version: 1.0.0+1
+version: 1.0.0
 homepage: https://github.com/alexandre1992/device_context_plus
 repository: https://github.com/alexandre1992/device_context_plus
 issue_tracker: https://github.com/alexandre1992/device_context_plus/issues
