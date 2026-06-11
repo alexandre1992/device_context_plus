@@ -71,7 +71,7 @@ final device = await DeviceContextPlus.getDevice();
     "bundle_id": "com.example.deviceContextPlusExample",
     "version": "1.0.0",
     "build": "1",
-    "team_id": "L5XS4MU8F2"
+    "team_id": "G5VS9WO7F1"
   },
   "device": {
     "platform": "ios",
