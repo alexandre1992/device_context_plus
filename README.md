@@ -45,7 +45,7 @@ Unlike basic plugins, `device_context_plus` goes beyond simple app info by expos
 
 ```dart
 // Get full context
-final context = await DeviceContextPlus.getContext();
+final context = await DeviceContextPlus.getAll();
 print(context.app);
 print(context.device);
 
@@ -56,11 +56,11 @@ final device = await DeviceContextPlus.getDevice();
 
 ### Available Methods
 
-| Method         | Returns                    |
-| -------------- | -------------------------- |
-| `getContext()` | Structured `DeviceContext` |
-| `getApp()`     | Application information    |
-| `getDevice()`  | Device and OS information  |
+| Method        | Returns                    |
+| ------------- | -------------------------- |
+| `getAll()`    | Structured `DeviceContext` |
+| `getApp()`    | Application information    |
+| `getDevice()` | Device and OS information  |
 
 ### Example Response
 
@@ -115,5 +115,5 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  device_context_plus: ^1.0.0
+  device_context_plus: ^1.0.1
 ```

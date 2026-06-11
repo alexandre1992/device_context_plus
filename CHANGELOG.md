@@ -43,7 +43,7 @@ First stable release of `device_context_plus`.
 
 ### 🔧 API
 
-- `getContext()` → returns typed `DeviceContext`
+- `getAll()` → returns typed `DeviceContext`
 - `getApp()` → returns app information
 - `getDevice()` → returns device information
 
@@ -61,3 +61,9 @@ First stable release of `device_context_plus`.
 - 🔥 Unique support for **iOS Team ID**
 - 📊 Designed for analytics and runtime insights
 - 🧠 Clean and structured API
+
+## 1.0.1
+
+### 🛠 Melhorias na documentação
+
+- Nome do metodo mudou de getContext para getAll
