@@ -67,3 +67,9 @@ First stable release of `device_context_plus`.
 ### 🛠 Melhorias na documentação
 
 - Nome do metodo mudou de getContext para getAll
+
+## 1.0.2
+
+### 🛠 Melhorias na documentação
+
+- Mudança no pacote do MainActivity

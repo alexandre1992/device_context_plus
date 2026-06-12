@@ -67,7 +67,7 @@ final device = await DeviceContextPlus.getDevice();
 ```json
 {
   "app": {
-    "bundle_id": "com.example.deviceContextPlusExample",
+    "bundle_id": "br.com.example.deviceContextPlusExample",
     "version": "1.0.0",
     "build": "1",
     "team_id": "G5VS9WO7F1"
@@ -115,5 +115,5 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  device_context_plus: ^1.0.1
+  device_context_plus: ^1.0.2
 ```
