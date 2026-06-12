@@ -2,9 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.3 - Stable
+
+### 🛠 Melhoria de arquitetura
+
+- Alterações de pacote
+
+## 1.0.2
+
+### 🛠 Melhoria de arquitetura
+
+- Mudança no pacote do MainActivity
+
+## 1.0.1
+
+### 🛠 Melhorias na documentação
+
+- Nome do metodo mudou de getContext para getAll
+
 ---
 
-## [1.0.0] - 2026-06-11
+## [1.0.0] - Beta
 
 ### ✨ Initial Release
 
@@ -61,15 +79,3 @@ First stable release of `device_context_plus`.
 - 🔥 Unique support for **iOS Team ID**
 - 📊 Designed for analytics and runtime insights
 - 🧠 Clean and structured API
-
-## 1.0.1
-
-### 🛠 Melhorias na documentação
-
-- Nome do metodo mudou de getContext para getAll
-
-## 1.0.2
-
-### 🛠 Melhorias na documentação
-
-- Mudança no pacote do MainActivity
