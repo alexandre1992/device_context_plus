@@ -51,4 +51,11 @@ void main() {
 
     expect(result['platform'], 'android');
   });
+
+  test('getAll returns typed', () async {
+    final result = await platform.getAll();
+
+    expect(result, isA<Map<String, dynamic>>());
+    expect(result['app'], isNotNull);
+  });
 }

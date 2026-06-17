@@ -2,7 +2,6 @@
 
 [![pub version](https://img.shields.io/pub/v/device_context_plus.svg)](https://pub.dev/packages/device_context_plus)
 [![likes](https://img.shields.io/pub/likes/device_context_plus)](https://pub.dev/packages/device_context_plus/score)
-[![popularity](https://img.shields.io/pub/popularity/device_context_plus)](https://pub.dev/packages/device_context_plus/score)
 [![points](https://img.shields.io/pub/points/device_context_plus)](https://pub.dev/packages/device_context_plus/score)
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-yellow?logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/malexandrej)
@@ -64,24 +63,51 @@ final device = await DeviceContextPlus.getDevice();
 
 ### Example Response
 
-```json
-{
-  "app": {
-    "bundle_id": "br.com.example.deviceContextPlusExample",
-    "version": "1.0.0",
-    "build": "1",
-    "team_id": "G5VS9WO7F1"
-  },
-  "device": {
-    "platform": "ios",
-    "model": "iPhone",
-    "name": "iPhone 17 Pro Max",
-    "system_name": "iOS",
-    "system_version": "26.5",
-    "locale": "en_BR",
-    "timezone": "America/Sao_Paulo"
-  }
-}
+```dart
+final info = await DeviceContextPlus.getAll();
+//iOS
+InfoAll(
+  app: InfoApp(
+    bundleId: "br.com.example.deviceContextPlusExample",
+    version: "1.0.0",
+    build: "1",
+    teamId: "G5VS9WO7F1",
+    packageName: null,
+    versionCode: null,
+  ),
+  device: InfoDevice(
+    platform: "ios",
+    model: "iPhone",
+    name: "iPhone 17 Pro Max",
+    systemName: "iOS",
+    systemVersion: "26.5",
+    locale: "en_BR",
+    timezone: "America/Sao_Paulo",
+  ),
+);
+//Android
+InfoAll(
+  app: InfoApp(
+    packageName: "br.com.example.deviceContextPlusExample",
+    version: "1.0.0",
+    versionCode: 100,
+    firstInstallTime: 1710000000000,
+    lastUpdateTime: 1711000000000,
+    installerStore: "com.android.vending",
+  ),
+  device: InfoDevice(
+    platform: "android",
+    model: "Pixel 8",
+    manufacturer: "Google",
+    brand: "google",
+    device: "shiba",
+    hardware: "gs201",
+    osVersion: "14",
+    sdkInt: 34,
+    locale: "pt_BR",
+    timezone: "America/Sao_Paulo",
+  ),
+);
 ```
 
 ---
@@ -115,5 +141,5 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  device_context_plus: ^1.0.3
+  device_context_plus: ^1.0.4
 ```

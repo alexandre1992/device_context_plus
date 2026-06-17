@@ -1,21 +1,22 @@
+import 'models/info_all.dart';
+import 'models/info_app.dart';
+import 'models/info_device.dart';
 import 'device_context_plus_platform_interface.dart';
-import 'models/device_context.dart';
 
 /// Main entry point for the DeviceContextPlus plugin
 class DeviceContextPlus {
-  /// Returns full device context (strongly typed)
-  static Future<DeviceContext> getAll() async {
+  static Future<InfoAll> getAll() async {
     final result = await DeviceContextPlusPlatform.instance.getAll();
-    return DeviceContext.fromMap(result);
+    return InfoAll.fromMap(result);
   }
 
-  /// Returns application info only
-  static Future<Map<String, dynamic>> getApp() {
-    return DeviceContextPlusPlatform.instance.getApp();
+  static Future<InfoApp> getApp() async {
+    final result = await DeviceContextPlusPlatform.instance.getApp();
+    return InfoApp.fromMap(result);
   }
 
-  /// Returns device info only
-  static Future<Map<String, dynamic>> getDevice() {
-    return DeviceContextPlusPlatform.instance.getDevice();
+  static Future<InfoDevice> getDevice() async {
+    final result = await DeviceContextPlusPlatform.instance.getDevice();
+    return InfoDevice.fromMap(result);
   }
 }

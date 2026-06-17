@@ -2,23 +2,110 @@
 
 All notable changes to this project will be documented in this file.
 
-## 1.0.3 - Stable
+---
+
+## [1.0.4] - Stable
+
+### 🧱 Refatoração de Models (Breaking Change)
+
+- 🔥 Substituição do model `DeviceContext` por models tipados:
+  - `InfoApp`
+  - `InfoDevice`
+  - `InfoAll` (agregador)
+
+- ✅ Separação clara entre:
+  - Dados da aplicação (`InfoApp`)
+  - Dados do dispositivo (`InfoDevice`)
+
+- ✅ Mapeamento unificado entre Android e iOS
+
+---
+
+### 🚀 Melhorias na API
+
+- `getAll()` agora retorna `InfoAll`  
+  _(antes: `DeviceContext`)_
+
+- `getApp()` agora retorna `InfoApp`  
+  _(antes: `Map<String, dynamic>`)_
+
+- `getDevice()` agora retorna `InfoDevice`  
+  _(antes: `Map<String, dynamic>`)_
+
+---
+
+### 🧠 Tipagem forte (Strongly Typed API)
+
+- ✅ Removido uso direto de `Map<String, dynamic>`
+- ✅ Melhor autocomplete
+- ✅ Mais segurança em tempo de compilação
+
+---
+
+### 🔄 Compatibilidade Cross-platform
+
+- Campos unificados:
+  - `version` → (iOS: `version`, Android: `version_name`)
+
+- Campos específicos por plataforma:
+
+**iOS**
+
+- `bundleId`
+- `build`
+- `teamId`
+- `systemName`
+- `systemVersion`
+
+**Android**
+
+- `packageName`
+- `versionCode`
+- `firstInstallTime`
+- `lastUpdateTime`
+- `installerStore`
+- `manufacturer`
+- `brand`
+- `device`
+- `hardware`
+- `sdkInt`
+
+---
+
+### 🧪 Testes
+
+- ✅ Atualizados para suportar novos models:
+  - `InfoAll`
+  - `InfoApp`
+  - `InfoDevice`
+
+- ✅ Cobertura ajustada para:
+  - parsing (`fromMap`)
+  - validação de propriedades tipadas
+
+---
+
+## [1.0.3] - Stable
 
 ### 🛠 Melhoria de arquitetura
 
 - Alterações de pacote
 
-## 1.0.2
+---
+
+## [1.0.2]
 
 ### 🛠 Melhoria de arquitetura
 
 - Mudança no pacote do MainActivity
 
-## 1.0.1
+---
+
+## [1.0.1]
 
 ### 🛠 Melhorias na documentação
 
-- Nome do metodo mudou de getContext para getAll
+- Nome do método mudou de `getContext` para `getAll`
 
 ---
 
@@ -27,6 +114,8 @@ All notable changes to this project will be documented in this file.
 ### ✨ Initial Release
 
 First stable release of `device_context_plus`.
+
+---
 
 ### 🚀 Features
 
@@ -37,7 +126,7 @@ First stable release of `device_context_plus`.
   - build number
 
 - 🍎 iOS:
-  - Apple Developer **Team ID** (retrieved via Keychain for reliability)
+  - Apple Developer **Team ID** (via Keychain)
 
 - 🤖 Android:
   - installer source (Play Store, APK, etc.)
@@ -54,14 +143,17 @@ First stable release of `device_context_plus`.
   - timezone
 
 - 🧩 Structured response:
-  - separated into `app` and `device`
+  - `app`
+  - `device`
 
 - 🧱 Typed API:
-  - `DeviceContext` model for better developer experience
+  - `DeviceContext`
+
+---
 
 ### 🔧 API
 
-- `getAll()` → returns typed `DeviceContext`
+- `getAll()` → returns `DeviceContext`
 - `getApp()` → returns app information
 - `getDevice()` → returns device information
 
@@ -76,6 +168,6 @@ First stable release of `device_context_plus`.
 
 ### 🎯 Highlights
 
-- 🔥 Unique support for **iOS Team ID**
-- 📊 Designed for analytics and runtime insights
-- 🧠 Clean and structured API
+- 🔥 iOS Team ID support
+- 📊 Ideal for analytics
+- 🧠 Clean API

@@ -32,28 +32,28 @@ void main() {
     expect(initialPlatform, isNotNull);
   });
 
-  test('getAll returns DeviceContext model', () async {
+  test('getAll returns InfoAll', () async {
     DeviceContextPlusPlatform.instance = MockDeviceContextPlusPlatform();
 
-    final context = await DeviceContextPlus.getAll();
+    final result = await DeviceContextPlus.getAll();
 
-    expect(context.app['version'], '1.0.0');
-    expect(context.device['platform'], 'android');
+    expect(result.app.version, '1.0.0');
+    expect(result.device.platform, 'android');
   });
 
-  test('getApp returns expected data', () async {
+  test('getApp returns InfoApp', () async {
     DeviceContextPlusPlatform.instance = MockDeviceContextPlusPlatform();
 
     final result = await DeviceContextPlus.getApp();
 
-    expect(result['version'], '1.0.0');
+    expect(result.version, '1.0.0');
   });
 
-  test('getDevice returns expected data', () async {
+  test('getDevice returns InfoDevice', () async {
     DeviceContextPlusPlatform.instance = MockDeviceContextPlusPlatform();
 
     final result = await DeviceContextPlus.getDevice();
 
-    expect(result['platform'], 'android');
+    expect(result.platform, 'android');
   });
 }
