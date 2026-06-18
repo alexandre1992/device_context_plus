@@ -56,6 +56,7 @@ class DeviceContextPlus {
   /// - Manufacturer (Android)
   /// - System name (iOS)
   /// - Locale and timezone
+  /// - isEmulator (boolean indicating if running in emulator/simulator)
   ///
   /// Example:
   /// ```dart

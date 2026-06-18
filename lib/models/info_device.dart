@@ -32,6 +32,9 @@ class InfoDevice {
   /// Device timezone.
   final String? timezone;
 
+  /// Indicates if the app is running in an emulator/simulator (`android` or `ios`).
+  final bool isEmulator;
+
   /// Creates a new [InfoDevice] instance.
   InfoDevice({
     this.platform,
@@ -47,6 +50,7 @@ class InfoDevice {
     this.sdkInt,
     this.locale,
     this.timezone,
+    this.isEmulator = false,
   });
 
   /// Creates an instance from native map data.
@@ -65,6 +69,7 @@ class InfoDevice {
       sdkInt: map['sdk_int'],
       locale: map['locale'],
       timezone: map['timezone'],
+      isEmulator: map['isEmulator'] ?? false,
     );
   }
 }

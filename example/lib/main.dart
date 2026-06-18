@@ -82,6 +82,7 @@ class _MyAppState extends State<MyApp> {
 
                   _buildItem('locale', data!.device.locale),
                   _buildItem('timezone', data!.device.timezone),
+                  _buildItem('isEmulator', data!.device.isEmulator),
                 ],
               ),
       ),

@@ -83,6 +83,7 @@ InfoAll(
     systemVersion: "26.5",
     locale: "en_BR",
     timezone: "America/Sao_Paulo",
+    isEmulator: true,
   ),
 );
 //Android
@@ -106,6 +107,7 @@ InfoAll(
     sdkInt: 34,
     locale: "pt_BR",
     timezone: "America/Sao_Paulo",
+    isEmulator: false,
   ),
 );
 ```
@@ -141,5 +143,5 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  device_context_plus: ^1.0.5
+  device_context_plus: ^1.0.6
 ```

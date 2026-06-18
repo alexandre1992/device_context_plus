@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.6] - Stable
+
+### 📚 New property
+
+- ✅ Adicionado um novo parametro para iOS/Android na model `InfoDevice`
+  - `getDevice()` get the property -> `isEmulator`
+
+---
+
 ## [1.0.5] - Stable
 
 ### 📚 Documentation Improvements
@@ -117,7 +126,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.0.2]
+## [1.0.2] - Beta
 
 ### 🛠 Melhoria de arquitetura
 
@@ -125,7 +134,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [1.0.1]
+## [1.0.1] - Beta
 
 ### 🛠 Melhorias na documentação
 

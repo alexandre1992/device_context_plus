@@ -107,6 +107,7 @@ class DeviceContextPlusPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
      * - sdk_int
      * - locale
      * - timezone
+     * - isEmulator (boolean indicating if running in emulator)
      */
     private fun getDevice(): Map<String, Any> {
         return mapOf(
@@ -119,7 +120,8 @@ class DeviceContextPlusPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
             "os_version" to Build.VERSION.RELEASE,
             "sdk_int" to Build.VERSION.SDK_INT,
             "locale" to Locale.getDefault().toString(),
-            "timezone" to TimeZone.getDefault().id
+            "timezone" to TimeZone.getDefault().id,
+            "isEmulator" to isEmulator,
         )
     }
 
@@ -129,4 +131,22 @@ class DeviceContextPlusPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
     override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
         channel.setMethodCallHandler(null)
     }
+
+    /**
+     * Determines if the app is running in an emulator/simulator environment.
+     */
+    private val isEmulator: Boolean
+        get() = ((Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic"))
+            || Build.FINGERPRINT.startsWith("generic")
+            || Build.FINGERPRINT.startsWith("unknown")
+            || Build.HARDWARE.contains("goldfish")
+            || Build.HARDWARE.contains("ranchu")
+            || Build.MODEL.contains("google_sdk")
+            || Build.MODEL.contains("Emulator")
+            || Build.MODEL.contains("Android SDK built for x86")
+            || Build.MANUFACTURER.contains("Genymotion")
+            || Build.PRODUCT.contains("sdk")
+            || Build.PRODUCT.contains("vbox86p")
+            || Build.PRODUCT.contains("emulator")
+            || Build.PRODUCT.contains("simulator"))
 }

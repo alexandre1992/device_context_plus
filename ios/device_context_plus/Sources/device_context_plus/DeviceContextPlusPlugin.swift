@@ -80,6 +80,16 @@ public class DeviceContextPlusPlugin: NSObject, FlutterPlugin {
 
   /**
    * Returns device and operating system information.
+    * Includes:
+      * - platform (fixed to "ios")
+      * - model
+      * - name
+      * - system_name
+      * - system_version 
+      * - locale
+      * - timezone
+      * - isEmulator (boolean indicating if running in simulator)
+    *
    */
   private func getDevice() -> [String: Any] {
     let device = UIDevice.current
@@ -91,7 +101,8 @@ public class DeviceContextPlusPlugin: NSObject, FlutterPlugin {
       "system_name": device.systemName,
       "system_version": device.systemVersion,
       "locale": Locale.current.identifier,
-      "timezone": TimeZone.current.identifier
+      "timezone": TimeZone.current.identifier,
+      "isEmulator": isEmulator(),
     ]
   }
 
@@ -140,5 +151,16 @@ public class DeviceContextPlusPlugin: NSObject, FlutterPlugin {
     }
 
     return accessGroup.components(separatedBy: ".").first
+  }
+
+  /**
+   * Determines if the app is running in an emulator/simulator environment.
+   */
+  private func isEmulator() -> Bool {
+    #if targetEnvironment(simulator)
+      return true
+    #else
+      return false
+    #endif
   }
 }
