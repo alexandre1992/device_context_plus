@@ -141,5 +141,5 @@ Add the plugin to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  device_context_plus: ^1.0.4
+  device_context_plus: ^1.0.5
 ```

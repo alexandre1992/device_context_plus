@@ -6,6 +6,7 @@ import 'device_context_plus_method_channel.dart';
 ///
 /// Defines the contract that platform-specific implementations must follow.
 abstract class DeviceContextPlusPlatform extends PlatformInterface {
+  /// Constructs a [DeviceContextPlusPlatform].
   DeviceContextPlusPlatform() : super(token: _token);
 
   static final Object _token = Object();

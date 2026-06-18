@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.5] - Stable
+
+### 📚 Documentation Improvements
+
+- ✅ Adicionados comentários DartDoc em:
+  - `DeviceContextPlus`
+  - `getAll()`
+  - `getApp()`
+  - `getDevice()`
+
+- ✅ Documentação dos models:
+  - `InfoApp`
+  - `InfoDevice`
+  - `InfoAll`
+
+- ✅ Inclusão de exemplos práticos nos métodos públicos
+
+- ✅ Melhor descrição dos campos cross-platform (iOS e Android)
+
+- ✅ Cobertura de documentação da API aumentada significativamente
+  _(corrigindo aviso de baixa documentação pública)_
+
+---
+
 ## [1.0.4] - Stable
 
 ### 🧱 Refatoração de Models (Breaking Change)

@@ -1,16 +1,35 @@
+/// Represents application-level information.
+///
+/// Contains platform-specific fields for both Android and iOS.
 class InfoApp {
-  final String? bundleId; // iOS
-  final String? version;
-  final String? build; // iOS
+  /// iOS bundle identifier.
+  final String? bundleId;
 
-  final String? packageName; // Android
+  /// App version (iOS: version | Android: versionName).
+  final String? version;
+
+  /// iOS build number.
+  final String? build;
+
+  /// Android package name.
+  final String? packageName;
+
+  /// Android version code.
   final int? versionCode;
+
+  /// First installation timestamp (Android).
   final int? firstInstallTime;
+
+  /// Last update timestamp (Android).
   final int? lastUpdateTime;
+
+  /// Installer source (Play Store, APK, etc.).
   final String? installerStore;
 
-  final String? teamId; // iOS
+  /// Apple Developer Team ID (iOS).
+  final String? teamId;
 
+  /// Creates a new [InfoApp] instance.
   InfoApp({
     this.bundleId,
     this.version,
@@ -23,6 +42,7 @@ class InfoApp {
     this.teamId,
   });
 
+  /// Creates an instance from native map data.
   factory InfoApp.fromMap(Map<String, dynamic> map) {
     return InfoApp(
       bundleId: map['bundle_id'],
